@@ -1,17 +1,17 @@
-#include <iostream>     // Para entrada y salida est·ndar
+#include <iostream>     // Para entrada y salida est√°ndar
 #include <string>       // Para poder usar strings
 using namespace std;
 
-// Estructura que representa un nodo en el ·rbol genealÛgico
+// Estructura que representa un nodo en el √°rbol geneal√≥gico
 struct Nodo {
-    int id;              // Identificador ˙nico para la persona
+    int id;              // Identificador √∫nico para la persona
     string nombre;       // Nombre de la persona
     Nodo* izq;           // Puntero al hijo izquierdo
     Nodo* der;           // Puntero al hijo derecho
     Nodo* padre;         // Puntero al nodo padre
 };
 
-// FunciÛn que crea y retorna un nuevo nodo con los datos entregados
+// Funci√≥n que crea y retorna un nuevo nodo con los datos entregados
 Nodo* crearNodo(int id, string nombre) {
     Nodo* nuevo = new Nodo();
     nuevo->id = id;
@@ -22,18 +22,18 @@ Nodo* crearNodo(int id, string nombre) {
     return nuevo;
 }
 
-// FunciÛn para buscar una persona por su ID en todo el ·rbol
+// Funci√≥n para buscar una persona por su ID en todo el √°rbol
 Nodo* buscarPorID(Nodo* raiz, int id) {
-    if (raiz == NULL) return NULL;            // Caso base: ·rbol vacÌo
-    if (raiz->id == id) return raiz;          // Se encontrÛ el nodo
+    if (raiz == NULL) return NULL;            // Caso base: √°rbol vac√≠o
+    if (raiz->id == id) return raiz;          // Se encontr√≥ el nodo
 
     Nodo* encontrado = buscarPorID(raiz->izq, id); // Buscar por la izquierda
-    if (encontrado != NULL) return encontrado;     // Si lo encontrÛ, lo retorna
+    if (encontrado != NULL) return encontrado;     // Si lo encontr√≥, lo retorna
 
     return buscarPorID(raiz->der, id);             // Buscar por la derecha
 }
 
-// FunciÛn para insertar un hijo (si hay espacio)
+// Funci√≥n para insertar un hijo (si hay espacio)
 void insertarHijo(Nodo* padre, int id, string nombre) {
     Nodo* hijo = crearNodo(id, nombre);
     hijo->padre = padre;
@@ -46,9 +46,9 @@ void insertarHijo(Nodo* padre, int id, string nombre) {
         cout << "Esta persona ya tiene dos descendientes.\n";
 }
 
-// FunciÛn que muestra el men˙ principal
+// Funci√≥n que muestra el men√∫ principal
 void menuGenealogia() {
-    Nodo* raiz = NULL;  // El ·rbol parte vacÌo
+    Nodo* raiz = NULL;  // El √°rbol parte vac√≠o
     int opcion, id, idPadre;
     string nombre;
 
@@ -57,7 +57,7 @@ void menuGenealogia() {
         cout << "1. Ingresar ancestro principal\n";
         cout << "2. Insertar descendiente\n";
         cout << "3. Salir\n";
-        cout << "Ingrese una opciÛn: ";
+        cout << "Ingrese una opci√≥n: ";
         cin >> opcion;
 
         switch(opcion) {
@@ -86,7 +86,7 @@ void menuGenealogia() {
                     if (padreNodo != NULL)
                         insertarHijo(padreNodo, id, nombre);
                     else
-                        cout << "No se encontrÛ ese ID en el ·rbol.\n";
+                        cout << "No se encontr√≥ ese ID en el √°rbol.\n";
                 }
                 break;
 
@@ -105,4 +105,4 @@ int main() {
     menuGenealogia();
     return 0;
 }
-
+SADASDASDASD
